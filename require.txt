@@ -1,0 +1,115 @@
+keytool -keystore debug.keystore -list -v
+
+
+keytool -genkey -v -keystore debug.keystore -alias androiddebugkey -storepass android -keypass android -keyalg RSA -validity 10000
+
+import com.facebook.FacebookSdk;
+@Override
+  public void onCreate() {
+    super.onCreate();
+    FacebookSdk.sdkInitialize(getApplicationContext());
+    AppEventsLogger.activateApp(this);
+  }
+
+   <string name="facebook_app_id">616142423312229</string>
+
+     implementation("com.facebook.react:react-android")
+
+    implementation "androidx.multidex:multidex:2.0.1"
+    implementation 'com.facebook.android:facebook-android-sdk:[8,9)'
+
+     classpath("com.facebook.react:react-native-gradle-plugin")
+
+     import { LoginManager, AccessToken } from 'react-native-fbsdk-next';
+
+
+https://chatapp-92995.firebaseapp.com/__/auth/handler
+
+
+ npm cache verify
+
+
+
+fblogin: async()=>{
+            try{
+                const result = await LoginManager.logInWithPermissions(['public_profile', 'email']);
+
+                if (result.isCancelled) {
+                  throw 'User cancelled the login process';
+                }
+              
+                // Once signed in, get the users AccesToken
+                const data = await AccessToken.getCurrentAccessToken();
+              
+                if (!data) {
+                  throw 'Something went wrong obtaining access token';
+                }
+              
+                // Create a Firebase credential with the AccessToken
+                const facebookCredential = auth.FacebookAuthProvider.credential(data.accessToken);
+              
+                // Sign-in the user with the credential
+                await auth().signInWithCredential(facebookCredential);
+              }
+            catch(e){
+                console.log(e);
+            }
+        },
+
+
+        <Image
+  source={{uri:'../../Assets/socialLogo.jpg' }}
+  style={{ width: 100, height: 100 }}
+  PlaceholderContent={<ActivityIndicator />}
+/>
+
+<Button
+  title="Solid Button"
+/>
+
+
+<Avatar
+  source={{
+    uri:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+  }}
+  >
+  <Accessory />
+</Avatar>
+
+
+
+
+
+
+ChatApp
+
+chatapp-92995
+
+1131093311
+
+
+
+
+https://firebasestorage.googleapis.com/v0/b/chatapp-d9719.appspot.com/o/photos%2F7c1a8f1d-59e3-4ba9-9698-54ef688490ff1681629483777.jpg?alt=media&token=cfd10f71-3e89-45f2-af4d-45dc1373ac25
+
+
+
+
+
+<FlatList
+    data={Messages}
+    keyExtractor={item =>item.id}
+    renderItem={({item})=>(
+      <Card>
+        <UserInfo>
+          <UserImgWrapper>
+            <UserImg source={item.userImg}/>
+          </UserImgWrapper>
+        </UserInfo>
+      
+        </Card>
+    )
+
+    }
+    />
